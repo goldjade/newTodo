@@ -1,11 +1,16 @@
 import TodoListItem from './TodoListItem';
 
-const TodoList = () => {
+const TodoList = ({ todos, onRemove, onTiggle }) => {
   return (
     <div className="TodoList">
-      <TodoListItem />
-      <TodoListItem />
-      <TodoListItem />
+      {todos.map(todo => (
+        <TodoListItem
+          todo={todo}
+          key={todo.id}
+          onRemove={onRemove}
+          onTiggle={onTiggle}
+        />
+      ))}
     </div>
   );
 };
