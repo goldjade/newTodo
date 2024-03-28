@@ -36,23 +36,17 @@ function App() {
     nextId.current += 1;
   }, []);
 
-  const onRemove = useCallback(
-    id => {
-      setTodos(todos => todos.filter(todo => todo.id !== id));
-    },
-    [],
-  );
+  const onRemove = useCallback(id => {
+    setTodos(todos => todos.filter(todo => todo.id !== id));
+  }, []);
 
-  const onTiggle = useCallback(
-    id => {
-      setTodos(todos =>
-        todos.map(todo =>
-          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
-        ),
-      );
-    },
-    [],
-  );
+  const onTiggle = useCallback(id => {
+    setTodos(todos =>
+      todos.map(todo =>
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+      ),
+    );
+  }, []);
 
   return (
     <div className="App">
