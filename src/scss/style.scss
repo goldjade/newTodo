@@ -1,4 +1,11 @@
 @charset "utf-8";
 
-// 기본 scss
-@import "reset";
+@import 'reset';
+
+body {
+  background: #e9ecef;
+}
+@import 'todoTemplate';
+@import 'todoInsert';
+@import 'todoList';
+@import 'todoListItem';
